@@ -12,8 +12,7 @@
 				"redhat.vscode-xml",
 				"vmware.vscode-boot-dev-pack",
 				"vscjava.vscode-lombok",
-				"vscjava.vscode-java-debug",
-				"jawandarajbir.react-vscode-extension-pack",
+				"vscjava.vscode-java-debug"
 			]
 		}
 	}

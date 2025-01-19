@@ -12,23 +12,37 @@ import org.springframework.web.bind.annotation.RestController;
 
 import myboard.dto.ItemDto;
 import myboard.service.ItemService;
-
-
+import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 public class ItemController {
-    
+
     private final ItemService itemService;
 
     public ItemController(ItemService itemService) {
         this.itemService = itemService;
     }
 
+    @GetMapping("hello")
+    public String sayHello() {
+        return "You really listening me?????";
+    }
+
     @PostMapping("items")
     public void save(@RequestBody ItemDto itemDto) {
         itemService.saveItem(itemDto);
     }
-    
+
+    @GetMapping("items/{id}")
+    public ItemDto findItemById(@PathVariable Long id) {
+        return itemService.findItemById(id);
+    }
+
+    @PostMapping("items")
+    public void save(@RequestBody ItemDto itemDto) {
+        itemService.saveItem(itemDto);
+    }
+
     @GetMapping("items/{id}")
     public ItemDto findItemById(@PathVariable Long id) {
         return itemService.findItemById(id);
